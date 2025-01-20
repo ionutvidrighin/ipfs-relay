@@ -1,16 +1,12 @@
 {
-  "name": "ipfs-node",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "ipfs-relay",
+  "version": "1.0.0", 
+  "description": "A simple IPFS relay server",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "ipfs": "^0.66.1"
+    "ipfs": "^0.64.0"
   }
 }
