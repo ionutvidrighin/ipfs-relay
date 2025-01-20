@@ -11,6 +11,8 @@ if (typeof global.CustomEvent === 'undefined') {
   };
 }
 
+const PORT = process.env.PORT || 443;
+
 const startRelayNode = async () => {
   try {
     const node = await create({
@@ -25,7 +27,7 @@ const startRelayNode = async () => {
       config: {
         Addresses: {
           Swarm: [
-            '/dns4/ipfs-relay.onrender.com/tcp/443/wss', // WebSocket transport
+            `/dns4/ipfs-relay.onrender.com/tcp/${PORT}/wss`, // WebSocket transport
             '/ip4/0.0.0.0/tcp/4001',                    // Optional plain TCP
             '/ip4/0.0.0.0/udp/4001/quic'               // Optional QUIC transport
           ],
