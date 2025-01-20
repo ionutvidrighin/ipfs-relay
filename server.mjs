@@ -1,8 +1,8 @@
-const IPFS = require('ipfs');
+import { create } from 'ipfs';
 
 const startRelayNode = async () => {
   try {
-    const node = await IPFS.create({
+    const node = await create({
       repo: './ipfs-repo',
       config: {
         Addresses: {
