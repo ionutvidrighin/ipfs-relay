@@ -11,7 +11,7 @@ if (typeof global.CustomEvent === 'undefined') {
   };
 }
 
-const PORT = process.env.PORT || 443;
+const PORT = process.env.PORT || 5001;
 
 const startRelayNode = async () => {
   try {
