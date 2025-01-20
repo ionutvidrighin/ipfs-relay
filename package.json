@@ -5,7 +5,7 @@
   "description": "A simple IPFS relay server",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.mjs"
   },
   "dependencies": {
     "ipfs": "^0.64.0"
