@@ -1,6 +1,7 @@
 {
   "Addresses": {
     "Swarm": [
+      "/dns4/ipfs-relay.onrender.com/tcp/443/wss",
       "/ip4/0.0.0.0/tcp/4001",
       "/ip4/0.0.0.0/udp/4001/quic"
     ],

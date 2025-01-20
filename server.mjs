@@ -1,14 +1,33 @@
+import 'custom-event-polyfill'; // Add this line to polyfill CustomEvent
 import { create } from 'ipfs';
+import { webSockets } from '@libp2p/websockets';
+
+if (typeof global.CustomEvent === 'undefined') {
+  global.CustomEvent = class CustomEvent extends Event {
+    constructor(event, params = { bubbles: false, cancelable: false, detail: null }) {
+      super(event, params);
+      this.detail = params.detail;
+    }
+  };
+}
 
 const startRelayNode = async () => {
   try {
     const node = await create({
       repo: './ipfs-repo',
+      libp2p: {
+        config: {
+          transports: [
+            webSockets(), // Add WebSocket transport
+          ],
+        },
+      },
       config: {
         Addresses: {
           Swarm: [
-            '/ip4/0.0.0.0/tcp/4001',
-            '/ip4/0.0.0.0/udp/4001/quic',
+            '/dns4/ipfs-relay.onrender.com/tcp/443/wss', // WebSocket transport
+            '/ip4/0.0.0.0/tcp/4001',                    // Optional plain TCP
+            '/ip4/0.0.0.0/udp/4001/quic'               // Optional QUIC transport
           ],
           API: '/ip4/0.0.0.0/tcp/5001',
           Gateway: '/ip4/0.0.0.0/tcp/8080',

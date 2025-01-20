@@ -1,13 +1,16 @@
 {
   "type": "module",
   "name": "ipfs-relay",
-  "version": "1.0.0", 
+  "version": "1.0.0",
   "description": "A simple IPFS relay server",
   "main": "server.js",
   "scripts": {
     "start": "node server.mjs"
   },
   "dependencies": {
-    "ipfs": "^0.64.0"
+    "@libp2p/websockets": "^9.1.2",
+    "custom-event-polyfill": "^1.0.7",
+    "ipfs": "^0.64.0",
+    "libp2p": "^2.5.0"
   }
 }
