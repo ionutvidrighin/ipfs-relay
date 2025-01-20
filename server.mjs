@@ -27,9 +27,8 @@ const startRelayNode = async () => {
       config: {
         Addresses: {
           Swarm: [
-            `/dns4/ipfs-relay.onrender.com/tcp/${PORT}/wss`, // WebSocket transport
             '/ip4/0.0.0.0/tcp/4001',                    // Optional plain TCP
-            '/ip4/0.0.0.0/udp/4001/quic'               // Optional QUIC transport
+            '/ip4/0.0.0.0/udp/4001/quic',             // Optional QUIC transport
           ],
           API: '/ip4/0.0.0.0/tcp/5001',
           Gateway: '/ip4/0.0.0.0/tcp/8080',
