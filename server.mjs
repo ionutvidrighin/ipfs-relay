@@ -27,7 +27,7 @@ const startRelayNode = async () => {
       config: {
         Addresses: {
           Swarm: [
-            '/ip4/0.0.0.0/tcp/4001',                    // Optional plain TCP
+            `/ip4/0.0.0.0/tcp/${PORT}`,                    // Optional plain TCP
             '/ip4/0.0.0.0/udp/4001/quic',             // Optional QUIC transport
           ],
           API: '/ip4/0.0.0.0/tcp/5001',
@@ -41,6 +41,7 @@ const startRelayNode = async () => {
       },
     });
 
+    console.log(`Relay listening on port ${PORT}`);
     console.log('IPFS relay node is running...');
     console.log('Node ID:', (await node.id()).id);
 
