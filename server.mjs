@@ -9,7 +9,6 @@ const startRelayNode = async () => {
           Swarm: [
             '/ip4/0.0.0.0/tcp/4001',
             '/ip4/0.0.0.0/udp/4001/quic',
-            '/ip4/0.0.0.0/udp/4001/webrtc-direct',
           ],
           API: '/ip4/0.0.0.0/tcp/5001',
           Gateway: '/ip4/0.0.0.0/tcp/8080',
