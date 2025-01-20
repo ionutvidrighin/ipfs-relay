@@ -7,9 +7,6 @@
   "scripts": {
     "start": "node server.js"
   },
-  "engines": {
-    "node": ">=18.x <=20.x"
-  },
   "dependencies": {
     "ipfs": "^0.64.0"
   }
